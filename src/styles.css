@@ -1,1 +1,236 @@
 /* You can add global styles to this file, and also import other style files */
+
+.logo {
+    color: rgb(87, 87, 87);
+    font-size: 30px;
+}
+
+.nav-link1 {
+    color: rgb(126, 126, 126);
+    font-size: 17px;
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+body {
+    background-color: rgb(240, 242, 245)
+}
+
+footer {
+    width: 100%;
+}
+
+.welcome {
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.head {
+    /* background-color: aliceblue; */
+    padding: 20px 20px 60px 20px;
+}
+
+.link-below {
+    margin-top: -14px;
+}
+
+.card-section {
+    /* background-color: aliceblue; */
+    border-radius: 10px;
+    padding: 10px 20px 0px 20px;
+    /* filter: drop-shadow(0px 0px 5px #85ceff1e); */
+}
+
+.btn-view {
+    border: 1px solid rgb(36, 124, 255, 0)
+}
+
+.row {
+    padding: 3px 5px 10px 3px;
+}
+
+.cat-links a {
+    color: rgba(110, 110, 110, .64);
+}
+
+.current a {
+    color: black;
+}
+
+.cat-links {
+    color: rgba(110, 110, 110, 0.644);
+    border: 1px solid rgba(110, 110, 110, 0.644);
+    padding: 6px 6px;
+    border-radius: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.cat-links:hover {
+    border-color: green;
+}
+
+.current {
+    background-color: rgba(130, 158, 179, 0.425);
+    border: 1px solid rgba(110, 110, 110, 0.205);
+    color: black;
+}
+
+.masthead {
+    height: 80vh;
+    min-height: 500px;
+}
+
+.z-index {
+    z-index: 500;
+}
+
+.sep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(173, 173, 173);
+}
+
+.sepText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.sepText::before,
+.sepText::after {
+    content: '';
+    flex: 1;
+    width: 1px;
+    background: currentColor;
+    /* matches font color */
+    margin: .25em;
+}
+
+#searcher {
+    text-align: center;
+}
+
+.fa-search {
+    color: rgb(175, 175, 175);
+    position: absolute;
+    left: 43px;
+}
+
+.border-personal {
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.login-cont {
+    background-color: white;
+    padding: 35px 35px 5px 35px;
+    border-radius: 5px;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.iconp {
+    min-width: 0px;
+    color: rgb(151, 151, 151);
+}
+
+.input1 {
+    background-color: rgb(255, 255, 255) !important;
+    outline: none;
+    outline-width: 0px;
+}
+
+.post-box {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+}
+
+.category {
+    display: block;
+    padding: 10px;
+}
+
+.personal-card {
+    background-color: white;
+    padding: 10px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    border: 1px solid rgba(139, 139, 139, 0.11);
+}
+
+.no-padding {
+    padding: 3px 5px 2px 13px;
+}
+
+.personal-post {
+    background-color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(139, 139, 139, 0.11);
+}
+
+.personal-comment {
+    margin-top: 10px;
+    /* padding: 10px;
+padding-left: 20px;
+padding-right: 20px; */
+    border: 0px solid rgba(139, 139, 139, 0.11);
+}
+
+.comment {
+    margin-top: 3px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid rgba(236, 236, 236, 0.404);
+    padding: 10px 10px 5px 10px;
+}
+
+.title a {
+    color: rgb(53, 53, 53)
+}
+
+.small-text {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.text {
+    max-width: 80%;
+}
+
+.text span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.pd {
+    padding: 0px;
+    border: 1px solid rgba(150, 150, 150, 0.219);
+    border-radius: 3px;
+}

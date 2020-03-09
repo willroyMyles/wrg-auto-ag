@@ -1,0 +1,8 @@
+<app-welcome-jumbo></app-welcome-jumbo>
+
+<div *ngFor="let item of carHeaders; let i=index">
+
+    <app-parts-section [bodyParts]='carBody[i]' [title]='item'></app-parts-section>
+    <br/>
+    <br/>
+</div>

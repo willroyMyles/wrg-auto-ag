@@ -1,0 +1,44 @@
+<div class="container my-5 welcome">
+    <div class="container">
+        <p class="lead">Welcome to WRG Auto</p>
+
+        <ng-container *ngIf="isLoggedIn; then thenTemplate; else elseTemplate"></ng-container>
+        <ng-template #thenTemplate>
+            <div class="row">
+                <div class="col-md-5 mx-3">
+                    <hr class="my-2" />
+                    <app-caregory-partial></app-caregory-partial>
+                </div>
+                <app-line-divider></app-line-divider>
+                <div class="col-md-5 mx-4">
+                    <hr class="my-2" />
+                    <app-search-partial></app-search-partial>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #elseTemplate>
+            <div class="row" #loggedout>
+                <div class="col-md-3">
+                    <hr class="my-2" />
+                    <app-login-in-partial></app-login-in-partial>
+                </div>
+                <app-line-divider></app-line-divider>
+                <div class="col-md-4">
+                    <hr class="my-2" />
+                    <app-caregory-partial></app-caregory-partial>
+                </div>
+                <app-line-divider></app-line-divider>
+                <div class="col-md-3">
+                    <hr class="my-2" />
+                    <app-search-partial></app-search-partial>
+                </div>
+            </div>
+        </ng-template>
+
+
+
+
+
+        <br /><br />
+    </div>
+</div>

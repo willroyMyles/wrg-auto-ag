@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div *ngFor="let item of postArray; let i=index">
+
+                <div class="container personal-card my-3">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-12 text">
+                                    <div>
+                                        <button (click)="titleClicked(item)" class="btn btn-block text-left">{{item.title}}</button>
+                                    </div>
+                                    <div class="text-muted">
+                                        <span class="text-secondary text">{{item.body}}</span>
+                                    </div>
+                                    <div class="text-muted">
+                                        <small class="small-text">posted by - <a href="">{{item.username}}</a></small>
+                                    </div>
+                                    <div class="text-muted">
+                                        <small class="small-text">{{item.time | date : "E MMM d y "  }} | {{item.time | date : "hh:mm a"  }}  • </small>
+                                        <small class="small-text">{{item.time | amTimeAgo}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 text-center my-3">
+                            <div class="text-center"><small><a href="">{{item.category}}</a></small></div>
+                            <div class="text-center"><small><a href="">{{item.sub_category}}</a></small></div>
+                            <div class="text-center text-muted mall-text"><small>{{item.make}}</small></div>
+                            <div class="text-center text-muted mall-text"><small>{{item.model}}</small></div>
+                            <div class="text-center text-muted mall-text"><small>{{item.year}}</small></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            num of comments
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

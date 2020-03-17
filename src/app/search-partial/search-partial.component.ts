@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-search-partial',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPartialComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fg : FormBuilder) { }
+
+public formgroup = this.fg.group({
+
+})
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-caregory-partial',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaregoryPartialComponent implements OnInit {
 
-  constructor() { }
 
+
+  constructor(private fg : FormBuilder) { }
   ngOnInit(): void {
   }
+
+  public formgroup = this.fg.group({
+    select : [0]
+  });
+
+
 
 }

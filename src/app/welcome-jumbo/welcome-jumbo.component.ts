@@ -7,12 +7,12 @@ import { LoginService } from '../login.service';
   styleUrls: ['../app.component.css']
 })
 export class WelcomeJumboComponent implements OnInit {
-  public isLoggedIn;
+  public isLoggedIn = true;
   constructor(private loginService : LoginService
     ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.loginService.isLoggedIn;
+    //this.isLoggedIn = this.loginService.isLoggedIn;
   }
 
 }

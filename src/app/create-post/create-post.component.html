@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-md-12">
+            <h3 for="" class="my-1 mx-1 text-muted">Create a post</h3>
+
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+
+<form [formGroup]="formgroup" (ngSubmit)="onSubmit()">
+    <div class="container post-box">
+        <div class="row ">
+            <div class="col col-md-8">
+                <div class="row my-2">
+                    <div class="col  col-md-12">
+                        <input formControlName="title" class="form-control" type="text" name="" id="title" placeholder="Title goes here...">
+                        <div id="editor" class="" placeholder="Type here ... ">
+
+                            <ng-container *ngIf="isMobile; then thenTemplate; else elseTemplate"></ng-container>
+                            <ng-template #thenTemplate>
+                                <textarea formControlName="text" class="form-control my-3" placeholder="Message..." name="" id="" cols="30" rows="15"></textarea>
+                            </ng-template>
+                            <ng-template #elseTemplate>
+                                <angular-editor formControlName="text" [config]="editorConfig" class="my-3" cols="30" rows="15" [placeholder]="'Enter text here...'"></angular-editor>
+
+                            </ng-template>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-3 ">
+                <div class="row my-2">
+                    <div class="col col-md-12 ">
+                        <select formControlName="partCat" (change)="changeSubCategory(category.value)" name="Category" id="category" #category class=" justify-content-center form-control category">
+
+                          <option  *ngFor="let item of categories; let i=index" value="{{i}}">{{item}}</option>
+
+                      </select>
+                        <small class="form-text text-muted">Category</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <select formControlName="partSubCat" id="sub-category" class="form-control category" name="">
+                              <option *ngFor="let item of subCategories; let i=index" value="{{i}}">{{item}}</option>
+                          </select>
+                        <small class="form-text text-muted">Sub-Category</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <select formControlName="carCat" (change)="changeCarHeaderCategory(make.value)" id="make" #make class="form-control category" name="">
+                          <option *ngFor="let item of carCategories; let i=index" value="{{i}}">{{item}}</option>
+                          </select>
+                        <small class="form-text text-muted">Car Make</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <select formControlName="carSubCat" id="model" class="form-control category" name="">
+                          <option *ngFor="let item of carSubCategories; let i=index" value="{{i}}">{{item}}</option>
+                                  </select>
+                        <small class="form-text text-muted">Car Model</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-12">
+                        <input formControlName="year" type="year" placeholder="optional" id="year" class="form-control category" name="">
+
+                        <small class="form-text text-muted">year</small>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col col-md-12">
+                        <button class="btn btn-secondary" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my-n3">
+            <div class="col col-md-4">
+                <div class="form-check form-check-inline">
+                    <input id="notify" class="form-check-input" type="checkbox" name="" value="">
+                    <label for="my-input" class="form-check-label text-muted">Send reply notifications</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

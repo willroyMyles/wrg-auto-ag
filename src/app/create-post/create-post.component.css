@@ -1,0 +1,7 @@
+*[class*="angular-editor"] {
+    background-color: red;
+}
+
+.textarea {
+    background-color: rebeccapurple;
+}

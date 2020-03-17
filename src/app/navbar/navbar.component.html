@@ -1,0 +1,80 @@
+<!-- <div class="container bg-dark p-3">
+    <div class="row text-right p-0">
+        <div class="col-md-12 d-inline p-0">
+            <a routerLink="" routerLinkActive="nav-active" class="nav-link1" alt="Home">
+                Home
+            </a>
+            <a (click)="toggleShowMenu()" class="nav-link1" alt="Home">
+              Category
+          </a>
+
+            <ng-container *ngIf="isLoggedIn(); then thenTemplate; else elseTemplate"></ng-container>
+            <ng-template #thenTemplate>
+                <div class="btn-group">
+                    <div class="dropdown">
+                        <a class="nav-link1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{username}}
+                            </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item nav-link1" href="#">Profile</a>
+                            <a class="dropdown-item nav-link1" href=javascript:void(0) (click)="logout()">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #elseTemplate>
+
+                <a routerLink="login" routerLinkActive="nav-active" class="nav-link1" alt="Login">Login</a>
+                <a routerLink="signup" routerLinkActive="nav-active" class="nav-link1" alt="Sign up">Sign up</a>
+            </ng-template>
+        </div>
+
+    </div>
+</div>
+<hr class="text-muted"> -->
+
+<div class="container nav-cont pt-4">
+    <div class="row">
+        <div class="col-md-5">
+
+            <a href="" class="nav-link1"> <i class="fa fa-bars" aria-hidden="false"></i> | bredcrumbs </a>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-1">
+            <a class="nav-link1" href="">HOME</a>
+        </div>
+
+        <ng-container *ngIf="isLoggedIn(); then thenTemplate; else elseTemplate"></ng-container>
+        <ng-template #thenTemplate>
+            <div class="col-md-2">
+                <a class="nav-link1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{username | uppercase}}
+          </a>
+                <div class="dropdown-menu dropdown-menu-right my-2 p-2" aria-labelledby="dropdownMenuButton">
+                    <a class="nav-link1" alt="Login">PROFILE</a>
+                    <a (click)="logout()" class="nav-link1" alt="Sign up">LOGOUT</a>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #elseTemplate>
+            <div class="col-md-2">
+                <a class="nav-link1" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        LOGIN
+          </a>
+                <div class="dropdown-menu dropdown-menu-right my-2 p-2" aria-labelledby="dropdownMenuButton">
+                    <a routerLink="login" class="nav-link1" alt="Login">Login</a>
+                    <a routerLink="signup" class="nav-link1" alt="Sign up">Sign up</a>
+                </div>
+            </div>
+        </ng-template>
+
+
+
+
+
+
+    </div>
+    <!-- <hr class="custom-hr"> -->
+</div>

@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container personal-post shadow-sm">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <h4 class="animated fadeIn">{{post.title | titlecase}}</h4>
+                    </div>
+                </div>
+                <div class="row  pt-0 pb-0">
+                    <div class="col-md-12">
+                        <div>
+                            <p>{{post.body}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-8 pt-0">
+                        <div class="text-muted">
+                            <small>posted by - </small>
+                            <app-display-card [name]="post.username"></app-display-card> |
+                            <small class="small-text">{{post.time | date : "E MMM d y "  }} | {{post.time | date : "hh:mm a"  }}  • </small>
+                            <small class="small-text">{{post.time | amTimeAgo}}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <app-post-status [status]="'open'"></app-post-status>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="replyForm">
+                <div class="row">
+                    <div class="col-md-12" *ngIf="replyHidden">
+                        <ng-container *ngIf="isMobile()">
+                            <textarea formControlName="text" class="form-control my-3" placeholder="Message..." name="" id="" cols="30" rows="15"></textarea>
+                        </ng-container>
+                        <ng-container *ngIf="!isMobile()">
+                            <angular-editor formControlName="text" [config]="editorConfig" class="my-3" cols="30" rows="15" [placeholder]="'Enter text here...'"></angular-editor>
+                        </ng-container>
+                    </div>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-md-8">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                    <input formControlName="notify" type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                    send reply notification
+                  </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 inline-block">
+                        <button (click)="changeReply(true)" [class.btn-primary]="replyHidden" [class.btn-secondary]="!replyHidden" class="btn d-inline-block btn-block">reply</button>
+                        <button (click)="changeReply(false)" *ngIf="replyHidden" class="btn btn-secondary d-inline-block btn-block">cancel</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div><small class="text text-center">{{post.category}}</small></div>
+            <div><small class="text text-center">{{post.sub_category}}</small></div>
+            <div><small class="text text-center">{{post.make}}</small></div>
+            <div><small class="text text-center">{{post.model}}</small></div>
+            <div><small class="text text-center">{{post.year}}</small></div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="text-muted">Replies</h3>
+            <h6><small class="text-muted my-n2">{{getReplyText()}}</small></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <app-reply-view [replies]="replies"></app-reply-view>
+        </div>
+    </div>
+</div>

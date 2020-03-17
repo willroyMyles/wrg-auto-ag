@@ -1,0 +1,67 @@
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <img src="assets/images/logo.png" alt="logo">
+    </div>
+    <div class="row justify-content-center">
+        <h5>Sign up with WRG Autoparts</h5>
+    </div>
+</div>
+<div class="container my-3 ">
+
+    <div class="row">
+        <div class="col-md-4 offset-4 justify-content-center login-cont">
+            <form [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="row my-2 form-group">
+                        <label for="username" class="my-1 mx-1 text-muted">Username</label>
+                        <input [class.is-invalid]="username().invalid && username().touched" formControlName='username' type="text" class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="row my-2">
+                        <label for="username" class="my-1 mx-1 text-muted">Email</label>
+                        <input [class.is-invalid]="email().invalid && email().touched" formControlName='email' type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
+                        <small id="helpId" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="row my-2">
+                        <label for="password" class="my-1 mx-1 text-muted">Password</label>
+                        <input [class.is-invalid]="password().invalid && password().touched" formControlName='password' type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="row my-2">
+                        <label for="password" class="my-1 mx-1 text-muted">Confirm Password</label>
+                        <input [class.is-invalid]="confirmPassword().invalid && confirmPassword().touched" formControlName='confirmPassword' type="password" class="form-control" name="password2" id="password2" aria-describedby="helpId" placeholder="">
+                    </div>
+
+                    <div class="text-danger">
+                        <div *ngIf=" username().touched">
+                            <small *ngIf="username().errors?.minlength">min length must be 4+ characters</small>
+                            <small *ngIf="username().errors?.required">username required</small>
+                        </div>
+                        <div *ngIf="email().touched">
+                            <small *ngIf="email().errors?.required">email required</small>
+                            <small *ngIf="email().errors?.email">email not in the correct format</small>
+                        </div>
+                        <div *ngIf=" password().touched">
+                            <small *ngIf="password().errors?.required">password required</small>
+                            <small *ngIf="password().errors?.minlength">passwaord too short</small>
+                        </div>
+                        <div *ngIf="confirmPassword().touched">
+                            <small *ngIf="confirmPassword().errors?.required">confrimation password required</small>
+                            <small *ngIf="confirmPassword().errors?.minlength">confirmation passwaord too short <br/></small>
+                            <small *ngIf="registrationFormGroup.errors?.mismatch">Password mismatch</small>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row justify-content-center">
+                        <button [disabled]="!registrationFormGroup.valid" id="sub1" type="" class="btn btn-secondary btn-block my-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{registrationFormGroup.value | json}}

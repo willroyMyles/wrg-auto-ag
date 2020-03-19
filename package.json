@@ -44,12 +44,13 @@
         "ngx-device-detector": "^1.4.0",
         "ngx-moment": "^3.5.0",
         "ngx-papaparse": "^4.0.4",
-        "popper": "^1.0.1",
+        "nopt": "^4.0.3",
         "popper.js": "^1.16.1",
         "rxjs": "~6.5.4",
         "rxjs-compat": "^6.5.4",
         "sweetalert2": "^9.10.2",
         "tslib": "^1.10.0",
+        "uuid": "^7.0.2",
         "zone.js": "~0.10.2"
     },
     "devDependencies": {

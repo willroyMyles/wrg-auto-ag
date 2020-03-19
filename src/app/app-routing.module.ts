@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { PartsViewComponent } from './parts-view/parts-view.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { PostViewComponent } from './post-view/post-view.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path : "signup", component : SignupComponent},
   {path : "parts/:section/:parts", component : PartsViewComponent},
   {path : "create-post" , component : CreatePostComponent},
-  {path : "post", component : PostViewComponent}
+  {path : "post/:id", component : PostViewComponent},
+  {path : "dashboard", component : DashboardComponent}
 ];
 
 @NgModule({

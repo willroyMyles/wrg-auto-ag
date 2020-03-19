@@ -25,6 +25,8 @@ import { PostViewComponent } from './post-view/post-view.component';
 import { DisplayCardComponent } from './display-card/display-card.component';
 import { ReplyViewComponent } from './reply-view/reply-view.component';
 import { PostStatusComponent } from './post-status/post-status.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UiLoaderComponent } from './ui-loader/ui-loader.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { PostStatusComponent } from './post-status/post-status.component';
     ReplyViewComponent,
     PostStatusComponent,
     NavbarComponent,
+    DashboardComponent,
+    UiLoaderComponent,
   ],
   imports: [
     BrowserModule,

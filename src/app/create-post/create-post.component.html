@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col col-md-12">
-            <h3 for="" class="my-1 mx-1 text-muted">Create a post</h3>
+            <h3 for="" class="section-title display-4">Create a post</h3>
 
             <hr>
         </div>
@@ -20,14 +20,9 @@
                         <input formControlName="title" class="form-control" type="text" name="" id="title" placeholder="Title goes here...">
                         <div id="editor" class="" placeholder="Type here ... ">
 
-                            <ng-container *ngIf="isMobile; then thenTemplate; else elseTemplate"></ng-container>
-                            <ng-template #thenTemplate>
-                                <textarea formControlName="text" class="form-control my-3" placeholder="Message..." name="" id="" cols="30" rows="15"></textarea>
-                            </ng-template>
-                            <ng-template #elseTemplate>
-                                <angular-editor formControlName="text" [config]="editorConfig" class="my-3" cols="30" rows="15" [placeholder]="'Enter text here...'"></angular-editor>
 
-                            </ng-template>
+                            <textarea formControlName="text" class="form-control my-3" placeholder="Message..." name="" id="" cols="30" rows="15"></textarea>
+
                         </div>
 
 

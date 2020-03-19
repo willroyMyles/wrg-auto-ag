@@ -1,0 +1,70 @@
+.card-p {
+    background-color: #f9feffd7;
+    border-radius: 2px;
+    border: 1px solid rgba(177, 177, 177, 0.164);
+    padding: 15px;
+    box-shadow: 0px 0px 15px rgba(177, 177, 177, 0.164);
+}
+
+.card-title {
+    font-weight: 800;
+    /* color: rgba(0, 0, 0, 0.63); */
+    margin-top: -10px;
+    margin-bottom: -3px;
+    background-color: rgba(187, 203, 215, 0);
+    border-radius: 1px;
+    padding: 1px;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 99%;
+}
+
+.card-body-text {
+    padding-left: 3px;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.63);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 45vw;
+    margin-top: 3px;
+    margin-bottom: 0rem;
+    padding-bottom: 0px;
+}
+
+.card-car-detail small {
+    color: rgba(0, 0, 0, 0.582);
+    padding-left: 3px;
+    /* white-space: nowrap;
+     color: rgb(151, 151, 151);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline;
+    max-width: 40%;
+    margin: auto;
+    */
+}
+
+.card-time {
+    font-weight: 800;
+    float: right;
+    color: rgba(46, 46, 46, 0.63);
+}
+
+.menu {
+    border-radius: 1px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: .3s;
+}
+
+.menu:hover {
+    background-color: rgba(231, 96, 96, 0.322);
+    color: rgba(151, 62, 62, 0.719);
+}
+
+.clickable {
+    cursor: pointer;
+}

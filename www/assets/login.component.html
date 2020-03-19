@@ -1,0 +1,44 @@
+<br>
+<div class="container">
+    <div class="row justify-content-center">
+        <img src="assets/images/logo.png" alt="logo">
+    </div>
+    <div class="row justify-content-center">
+        <h5>Sign in to WRG Autoparts</h5>
+    </div>
+</div>
+<div class="container my-3 ">
+
+    <div class="row">
+        <div class="col-md-4 offset-4 justify-content-center login-cont">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="row my-2">
+                        <label for="email" class="my-1 mx-1 text-muted">Username</label>
+                        <input formControlName="email" type="text" class="form-control" aria-describedby="helpId" placeholder="">
+                        <small id="helpId" class="form-text text-muted"></small>
+                    </div>
+
+                    <div class="row my-2">
+                        <label for="username" class="my-1 mx-1 text-muted">Password</label>
+                        <input formControlName="password" type="password" class="form-control" name="password" id="password" aria-describedby="helpId" placeholder="">
+                        <small id="helpId" class="form-text text-muted"><a href="">forgot password?</a></small>
+                    </div>
+
+
+                    <div class="row justify-content-center">
+                        <button type="submit" class="btn btn-secondary btn-block my-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container my-n2">
+    <div class="row ">
+        <div class="col-md-4 offset-4 text-center border-personal">
+            <div class="text-muted mx-auto">New to WRG Autoparts? <a href="/signup">Create an account</a></div>
+        </div>
+    </div>
+</div>

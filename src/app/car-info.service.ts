@@ -30,11 +30,11 @@ export class CarInfoService {
     this.parseCarList();
   }
 
-  public getCarsHeaders(){
+  public getCarMake(){
     return this.carsHeaders;
   }
 
-  public getCarList() : Array<Array<String>>{
+  public getCarModel() : Array<Array<String>>{
     return this.carsList;
   }
 
@@ -43,29 +43,37 @@ export class CarInfoService {
     return this.carPartsHeading.indexOf(title);
   }
 
-  public getPartsHeaders() : Array<String> {
+  public getPartsCategory() : Array<String> {
     return this.carPartsHeading;
   }
 
-  public getBodyParts(){
+  public getPartsSubCategory(){
     return this.cartPartsBody;
   }
 
-  public getCategoryTitle(num){
+  public getCategoryTitleByIndex(num){
     return this.carPartsHeading[num];
   }
 
-  public getSubCategoryTitle(num1, num2){
+  public getSubCategoryTitleByIndexes(num1, num2){
     return this.cartPartsBody[num1][num2];
   }
 
-  public getCarHeading(num){
+  public getCarMakeTitleByIndex(num){
     return this.carsHeaders[num]
   }
 
-  public getCarSubHeading(num1, num2){
-    return this.carsList[num1][num2];
+  public getCarModelTitleByIndexes(make, model){
+    return this.carsList[make][model];
   }
+
+  // public getCarHeading(num){
+  //   return this.carsHeaders[num]
+  // }
+
+  // public getCarSubHeading(num1, num2){
+  //   return this.carsList[num1][num2];
+  // }
 
   public parseCarList(){
     this.http.get(this.carString, {responseType : "text"}).subscribe(data =>{

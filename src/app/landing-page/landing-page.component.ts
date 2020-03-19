@@ -14,8 +14,8 @@ export class LandingPageComponent implements OnInit {
   constructor(private carparts : CarInfoService) { }
 
   ngOnInit(): void {
-    this.carHeaders = this.carparts.getPartsHeaders();
-    this.carBody = this.carparts.getBodyParts();
+    this.carHeaders = this.carparts.getPartsCategory();
+    this.carBody = this.carparts.getPartsSubCategory();
   }
 
 }

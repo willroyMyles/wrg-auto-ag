@@ -1,55 +1,55 @@
-<div class="container-fluid my-3 bg-light">
-
-    <div class="item"> {{actiRoute}}</div>
-
+<div class="container mt-5 ">
     <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <div class="row">
-                <h1 (click)="test()" class="display-3">
-                    {{title}}
-                </h1>
-            </div>
+        <div class="col-md-12">
+            <h1 (click)="test()" class="section-title display-3">
+                {{title}}
+            </h1>
+        </div>
+    </div>
+</div>
 
-            <ul class="list-inline">
-
+<div class="container mt-3">
+    <div class="row ">
+        <div class="col-md-12">
+            <ul class="list-inline  my-n1">
                 <ng-container *ngFor="let item of headings; let i = index">
                     <li class="list-inline-item filterLinks text-muted my-2" [class.current]="isCurrent(i)" (click)=" goto(i) ">
-
                         {{item}}
-
                     </li>
                 </ng-container>
             </ul>
         </div>
     </div>
 
-    <div class="container my-4 ">
+    <div class="container">
         <div class="row ">
-            <a name=" " id=" " (click)="createPost() " class="btn btn-secondary btn-block text-light uk-text-bold "><i class="fa fa-plus-circle " aria-hidden="true "></i> Create Post</a>
+            <div class="col-md-12 p-0">
+                <a name=" " id=" " (click)="createPost() " class="btn btn-secondary btn-block text-light uk-text-bold "><i class="fa fa-plus-circle " aria-hidden="true "></i> Create Post</a>
+            </div>
         </div>
     </div>
 
-    <div class="container p-3 ">
-        <div class="row d-inline ">
-            <div class="col-md-1 d-inline ">
+    <div class="container mt-4">
+        <div class="row d-inline p-0">
+            <div class="col-md-1 d-inline  pl-2 pr-2 ">
                 <a href=javascript:void(0) class="filterLinks list-inline-item text-muted " #all value="0 " [class.current]="currentStatusFilter==0 " (click)="sortBy(0) ">all</a>
             </div>
-            <div class="col-md-1 d-inline ">
+            <div class="col-md-1 d-inline  pl-2 pr-2 ">
                 <a href=javascript:void(0) class="filterLinks list-inline-item text-muted " #open value="1 " [class.current]="currentStatusFilter==1 " (click)="sortBy(1) ">open</a>
             </div>
-            <div class="col-md-1 d-inline ">
+            <div class="col-md-1 d-inline  pl-2 pr-2 ">
                 <a href=javascript:void(0) class="filterLinks list-inline-item text-muted " #closed value="2 " [class.current]="currentStatusFilter==2 " (click)="sortBy(2) ">closed</a>
             </div>
-            <div class="col-md-1 d-inline ">
+            <div class="col-md-1 d-inline  pl-2 pr-2 ">
                 <a href=javascript:void(0) class="filterLinks list-inline-item text-muted " #inactive value="3 " [class.current]="currentStatusFilter==3 " (click)="sortBy(3) ">inactive</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container ">
+<div class="container  mt-5">
     <div class="row ">
-        <div class="col-md-12 ">
+        <div class="col-md-12  ">
             <ng-container *ngIf="dataProvided; then thenTemplate; else elseTemplate "></ng-container>
             <ng-template #thenTemplate>
 

@@ -2,17 +2,17 @@ import { Posts } from './posts';
 
 export interface Users {
    _id;
-   email : String;
-   userName : String;
-   password : String;
+   email : string;
+   userName : string;
+   password : string;
    posts : Array<Posts>;
 }
 
 export class UserObject implements Users{
   _id;
-  email: String;
-  userName: String;
-  password: String;
-  posts: Posts[];
+  email: string;
+  userName: string;
+  password: string;
+  posts = new Array< Posts>();
 
 }

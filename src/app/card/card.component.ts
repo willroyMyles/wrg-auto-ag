@@ -4,11 +4,12 @@ import { CarInfoService } from '../car-info.service';
 import { DatabaseService } from '../database.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { HolderService } from '../holder.service';
+import { RemoteMongoClient } from 'mongodb-stitch-browser-sdk';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
 
@@ -33,8 +34,7 @@ export class CardComponent implements OnInit {
   }
 
   public titleClicked(item : PostsObject){
-    this.holder.storeItem(item);
-    this.router.navigate(["post"])
+    this.router.navigate(["post", item._id])
   }
 
 }

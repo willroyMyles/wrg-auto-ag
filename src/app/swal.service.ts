@@ -26,6 +26,12 @@ export class SwalService {
     width : "20rem"
   })
 
+  private LoginOptions = Swal.mixin({
+    position : 'center',
+    showConfirmButton : false,
+    width : "25rem"
+  })
+
 
   ngOnInit(): void {
   }
@@ -42,4 +48,11 @@ export class SwalService {
       html : body
     })
   }
+
+  public displayLoginView(body){
+    this.LoginOptions.fire({
+      html : body
+    })
+  }
+
 }

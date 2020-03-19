@@ -1,5 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --main-bg-grad: linear-gradient(rgba(239, 241, 245, 1), rgba(223, 226, 231, 1));
+    /* --main-bg-grad: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255), rgba(223, 226, 231, 1)); */
+    --yellow: rgb(254, 201, 7);
+    --text-color: rgb(108, 114, 132);
+    --text-extra-soft-color: rgba(108, 114, 132, 0.534);
+}
+
+.text-soft {
+    color: var(--text-color);
+    text-shadow: 0px 0px 1.5px rgba(112, 112, 112, 0.192);
+}
+
+.text-extra-soft {
+    color: var(--text-extra-soft-color);
+    text-shadow: 0px 0px 1.5px rgba(112, 112, 112, 0.192);
+}
+
+.indent {
+    text-indent: 22px;
+}
+
 .logo {
     color: rgb(87, 87, 87);
     font-size: 30px;
@@ -31,8 +53,9 @@
 
 body {
     /* background-color: rgb(240, 242, 245) */
-    background-color: rgb(229, 235, 240);
+    /* background-color: rgb(229, 235, 240); */
     /* background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgb(232, 234, 243)); */
+    background-image: var(--main-bg-grad)
 }
 
 footer {
@@ -62,18 +85,14 @@ footer {
 }
 
 .card-img-top {
-    max-width: 15%;
-    min-width: 15%;
-    width: 15%;
+    max-width: 45px;
+    min-width: 25px;
+    width: 44px;
     height: auto;
 }
 
 .btn-view {
     border: 1px solid rgb(36, 124, 255, 0)
-}
-
-.row {
-    padding: 3px 5px 10px 3px;
 }
 
 .cat-links a {
@@ -187,11 +206,12 @@ button:focus {
 }
 
 .personal-card {
-    background-color: white;
-    padding: 10px;
-    padding-bottom: 2px;
+    background-color: rgba(251, 254, 255, 0.575);
+    padding: 5px;
     border-radius: 5px;
-    border: 1px solid rgba(139, 139, 139, 0.11);
+    border: 0px solid rgba(139, 139, 139, 0.219);
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(206, 212, 216, 0.274);
 }
 
 .personal-post-link {
@@ -225,16 +245,6 @@ button:focus {
     padding: 3px 5px 2px 13px;
 }
 
-.personal-post {
-    background-color: transparent;
-    padding: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 5px;
-    border: 1px solid rgb(180, 180, 180);
-    box-shadow: rgb(194, 194, 194);
-}
-
 .personal-comment {
     margin-top: 10px;
     padding: 20px;
@@ -265,10 +275,15 @@ button:focus {
 
 .text span {
     white-space: nowrap;
+    /* color: rgb(151, 151, 151); */
     overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
-    max-width: 100%;
+    max-width: 45vw;
+}
+
+.extra-muted {
+    color: rgb(202, 202, 202);
 }
 
 .pd {
@@ -312,4 +327,53 @@ button:focus {
 
 .nav-cont {
     border-bottom: 1px solid rgba(110, 110, 110, 0.068);
+}
+
+.section-title {
+    font-weight: 700;
+    color: rgb(121, 132, 141);
+}
+
+.letter-image {
+    width: 40px;
+    height: 40px;
+    color: rgb(163, 163, 163);
+    border-radius: 40px;
+    background-color: rgb(233, 233, 233);
+    padding: 5px;
+    text-align: center;
+}
+
+.car-row {
+    font-weight: 800;
+    color: rgba(61, 61, 61, 0.63);
+    margin-top: -10px;
+    background-color: rgba(187, 203, 215, 0);
+    border-radius: 1px;
+    padding: 1px;
+    padding-right: 5px;
+    white-space: nowrap;
+    /* color: rgb(151, 151, 151); */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 45vw;
+}
+
+.can-click-link {
+    color: rgb(231, 96, 96);
+    cursor: pointer;
+}
+
+.can-click {
+    color: rgb(231, 96, 96);
+    cursor: pointer;
+    /* background-color: rgb(231, 96, 96); */
+    text-shadow: 0px 0px 4px rgba(182, 137, 137, 0.479);
+    transition: .3s;
+}
+
+.can-click:hover {
+    color: rgb(175, 71, 71);
+    text-shadow: 0px 0px 6px rgba(182, 137, 137, 0.479);
 }

@@ -11,6 +11,7 @@ export interface Posts {
   year;
   time;
   replies;
+  status;
 }
 
 export class PostsObject implements Posts{
@@ -25,6 +26,7 @@ export class PostsObject implements Posts{
     model: string;
     year: Number;
     time;
+    status : Number;
     replies : [];
 
 }

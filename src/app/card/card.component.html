@@ -1,6 +1,6 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 p-0">
 
             <div *ngFor="let item of postArray; let i=index">
 
@@ -10,13 +10,16 @@
                             <div class="row">
                                 <div class="col-md-12 text">
                                     <div>
-                                        <button (click)="titleClicked(item)" class="btn btn-block text-left">{{item.title}}</button>
+                                        <div (click)="titleClicked(item)" class="text-left">
+                                            <h3>{{item.title}}</h3>
+                                        </div>
                                     </div>
                                     <div class="text-muted">
-                                        <span class="text-secondary text">{{item.body}}</span>
+                                        <span class="text-secondary text text-muted">{{item.body}}</span>
                                     </div>
                                     <div class="text-muted">
-                                        <small class="small-text">posted by - <a href="">{{item.username}}</a></small>
+                                        <small>posted by - </small>
+                                        <app-display-card [name]="item.username"></app-display-card>
                                     </div>
                                     <div class="text-muted">
                                         <small class="small-text">{{item.time | date : "E MMM d y "  }} | {{item.time | date : "hh:mm a"  }}  • </small>
@@ -41,6 +44,84 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container p-0">
+    <div class="row">
+        <div class="col-md-8 p-0" *ngFor="let item of postArray; let i=index">
+            <div class="container card-p mt-3">
+                <div class="row p-0">
+                    <div class="col-md-12 my-auto d-inline ">
+                        <div class="float-left d-inline">
+                            <h2 class="d-inline card-title">{{item.title | titlecase}} </h2>
+                            <span class="d-inline card-car-detail">
+                                  <small>{{item.make}} / {{item.model}} / {{item.year}}  </small>
+                              </span>
+                            <div>
+                                <p class="text-muted card-body-text"><span>{{item.body}}</span></p>
+                            </div>
+                        </div>
+                        <div class="float-right d-inline py-0">
+                            <div><small class="text-center my-auto car-row"> {{item.time | amTimeAgo}} </small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-0">
+                    <div class="col-md-12">
+                        <small class="text-muted"> 1 <i class="fa fa-comment" aria-hidden="true"></i></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container my-3" *ngFor="let item of postArray; let i=index">
+    <div class="row">
+        <div class="col-md-8">
+
+
+            <div class="container card-p ">
+                <div class="row pl-0 clickable" (click)="titleClicked(item)">
+                    <div class="col-md-9 p-0 ">
+                        <div class="container ">
+                            <div class="row pl-0">
+                                <div class="col-md-12 ">
+                                    <h3 class="card-title d-inline float-left can-click-link" (click)="titleClicked(item)">{{item.title | titlecase}}</h3>
+                                    <div class="d-inline card-car-detail float-left">
+                                        <small class="  small-text"> {{item.make}} / </small>
+                                        <small class="  small-text"> {{item.model}} / </small>
+                                        <small class="  small-text"> {{item.year}}</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pb-0">
+                                <div class="col-md-12">
+                                    <span class="card-body-text">{{item.body}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="card-time">{{item.time | amTimeAgo}}</span>
+
+                    </div>
+                </div>
+                <div class="row pb-0">
+                    <div class="col-md-12  py-0 text-muted">
+                        <hr class="py-0 m-0 mb-2">
+                        <div class="d-inline">1 <i class="fa fa-comment" aria-hidden="true"></i></div>
+                        <div class=" float-right can-click menu">•••</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
     </div>
 </div>

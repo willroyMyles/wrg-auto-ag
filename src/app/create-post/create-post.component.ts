@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CarInfoService } from '../car-info.service';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { PostsObject } from '../posts';
 import { DatabaseService } from '../database.service';
+import { SwalService } from '../swal.service';
 
 @Component({
   selector: 'app-create-post',
@@ -76,8 +77,10 @@ constructor(
   private cis : CarInfoService,
   private div : DeviceDetectorService,
   private route : ActivatedRoute,
+  private router :Router,
   private fb : FormBuilder,
-  private db : DatabaseService
+  private db : DatabaseService,
+  private swal :SwalService
   ) { }
 
 
@@ -97,27 +100,25 @@ constructor(
 
   ngOnInit(): void {
     this.isMobile = this.div.isMobile();
-    this.categories = this.cis.getPartsHeaders();
-    this.carCategories = this.cis.getCarsHeaders();
+    this.categories = this.cis.getPartsCategory();
+    this.carCategories = this.cis.getCarMake();
 
-    this.cat = this.route.paramMap.subscribe((pram : ParamMap)=>{
+    this.route.paramMap.subscribe((pram : ParamMap)=>{
       this.cat = pram.get("cat");
       this.subcat = pram.get("subcat");
 
       this.getFormControl("partCat").setValue(this.cat);
-      this.changeSubCategory(this.subcat)
+      this.subCategories = this.cis.getPartsSubCategory()[this.cat];
       this.getFormControl("partSubCat").setValue(this.subcat);
-
-      console.log(this.cat, this.subcat);
     })
   }
 
   public changeSubCategory(value){
-    this.subCategories = this.cis.getBodyParts()[value];
+    this.subCategories = this.cis.getPartsSubCategory()[value];
   }
 
   public changeCarHeaderCategory(value){
-    this.carSubCategories = this.cis.getCarList()[value];
+    this.carSubCategories = this.cis.getCarModel()[value];
   }
 
   public onSubmit(){
@@ -132,7 +133,19 @@ constructor(
     post.userId = this.db.getId().toString();
     post.time = new Date();
 
-    this.db.addPost(post);
+    this.db.addPost(post).then(res =>{
+      if(res){
+        this.swal.displayToast('success', 'post created');
+
+        var part = this.cis.getPartsCategory()[this.cat];
+         this.router.navigate(["/parts", part, this.subcat])
+
+        //todo  vaigate to post
+      }else{
+        this.swal.displayToast('error', 'post not created');
+
+      }
+    })
 
   }
 

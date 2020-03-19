@@ -56,9 +56,9 @@ export class PartsViewComponent implements OnInit {
         this.sectionId = this.cis.getTitleIndex(this.title);
         //this.actiRoute = this.cis.getBodyParts()[this.sectionId][this.partsId];
         this.headings = res[this.sectionId];
+        this.provideData();
       })
 
-      this.provideData();
 
 
     })
@@ -86,7 +86,7 @@ export class PartsViewComponent implements OnInit {
     console.log("index ", index);
     this.db.getPosts(this.sectionId.toString(), this.partsId).then( (res : Array<PostsObject>) =>{
       this.appropriatePosts = res;
-      this.dataProvided = true;
+      this.dataProvided = res.length > 0? true:false
     })
   }
 

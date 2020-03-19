@@ -77,13 +77,25 @@ export class PostViewComponent implements OnInit {
       notify : [true]
     });
 
+    public working = true;
+    public postRecieved = false;
+
   ngOnInit(): void {
-      this.post = this.holder.getItem() as PostsObject;
-      this.getReplies();
+
+      this.route.paramMap.subscribe( (p : ParamMap)=>{
+        this.db.getOnePost(p.get("id")).then( (res : PostsObject) =>{
+          this.post = res;
+          this.working = false;
+        })
+      })
+
+      // this.post = this.holder.getItem() as PostsObject;
+      // this.getReplies();
   }
 
   public getReplyText(){
-    if(this.replies == undefined) return;
+    if(this.replies == undefined) return "0 replies";
+    if(this.replies.length == 0) return "0 replies";
     return this.replies.length > 1 ? this.replies.length + " replies" : "1 reply";
   }
 
